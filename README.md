@@ -1,1 +1,1 @@
-# GIPHYAPI
+# GifTastic
