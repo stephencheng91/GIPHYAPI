@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gif Tastic</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-10">Gif Tastic</h1>
+        </div>
+        <form>
+            <!-- create form for search input -->
+            <div class="form-group">
+                <label for="searchInput">Gif Search</label>
+                <input id="inputText" class="form-control form-control-lg" type="text" placeholder="Default input">
+            </div>
+            <!-- Submit button -->
+            <button type="submit" id="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <div class="container">
+        <!-- A div to place the searched text -->
+        <div class="searchedButton"></div>
+        <!-- A div to place the GIF -->
+        <div class="results"></div>
+    </div>
+
+    <!-- Import Jquery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Import Javascript -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
