@@ -20,16 +20,22 @@ $("#submit").click(function(event){
         url: queryURL,
         method: "GET"
     }).then(function(response){
-
-        //getting url from server
-        var imageUrl = response.data.images_original_url;
+        console.log(response);
+        //getting url from server ;
+        var gifData = response.data
         //create image div in html
-        var image = $("<img>");
+        for(var i=0; i<gifData.length;i++){
 
-        image.attr("src", imageUrl);
-        image.attr("alt", input + " image");
+            var imageUrl= gifData[i].images.original.url;
 
-        $(".results").prepend(image);
+            var image = $("<img>");
+
+            image.attr("src", imageUrl);
+            image.attr("alt", input + " image");
+    
+            $(".results").prepend(image);
+        }
+        
     })
     
     createButtons();
