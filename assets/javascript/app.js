@@ -5,7 +5,7 @@
 
 var apiKey = "8L4aVQa394LnTX4I6B98AtiQCSyY7hHo";
 //input take in as id
-var input = ""
+var input = "";
 var image;
 
 $("#submit").click(function (event) {
@@ -46,19 +46,27 @@ $("#submit").click(function (event) {
 })
 
 function createButtons() {
-    var button = $("<button>");
 
-    button.text(input);
+    // create a button with id=input
 
-    $(".searchedButton").prepend(button);
+    //  newButton =  button.text(input);
+    var newButton = $("<button>");
+    newButton.addClass("newButton");
+    newButton.attr("id", input);
+    newButton.text(input);
 
-    $(".searchedButton").click(function (event) {
+
+
+    $(".searchedButton").prepend(newButton);
+
+    $(".newButton").click(function (event) {
         event.preventDefault();
         $(".results").empty();
 
-
+        var topic = $(this).attr("id");
+        console.log(topic);
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-            $(".searchedButton").text() + "&api_key=" + apiKey;
+            topic + "&api_key=" + apiKey;
 
         console.log(queryURL);
         $.ajax({
@@ -83,5 +91,6 @@ function createButtons() {
         })
     })
 }
+
 
 
